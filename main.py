@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -7,8 +7,13 @@ def hola():
     return "Hola mundo"
 
 @app.route("/chau")
-def chau():  # Changed the function name to 'chau'
+def chau():  
     return "Chau"
+
+@app.route("/saludo/<nombre>")
+def saludo(nombre):
+    return "Hola " + nombre
+
 
 if __name__ == "__main__":
     app.run()

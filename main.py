@@ -10,9 +10,9 @@ def hola():
 def chau():  
     return "Chau"
 
-@app.route("/saludo/<nombre>")
-def saludo(nombre):
-    return "Hola " + nombre
+@app.route("/saludo/<nombre>/<apellido>")
+def saludo(nombre, apellido):
+    return "Hola " + nombre + " " + apellido             
 
 
 if __name__ == "__main__":
